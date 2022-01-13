@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SCBankGym</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-mo.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SCBankGym.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SCBankGym</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="TraineeLogin">Login</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="AdminLogin">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ContactUs">ContactUs</a>
+        </li>
+        @*<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>*@
+      </ul>
+    @*  <form class="d-flex">
+        <input class="form-control me-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>*@
+    </div>
+  </div>
+</nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <div class="footer-top" style="position:absolute;
+   bottom:0;
+   width:100%;
+   height:80px;">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>SCBankGym<span>.</span></h3>
+            <p>
+              A108 Adam Street <br>
+              6th of October, Giza<br>
+              Egypt <br><br>
+              <strong>Phone:</strong> +201154311204<br>
+              <strong>Email:</strong> info@SCBankGym.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="Index">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="ContactUs">ContactUs</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="Privacy">Privacy policy</a></li>
+            </ul>
+          </div>
+
+         
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <div class="social-links mt-3">
+                <ul>
+              <li><a href="https://twitter.com/" class="twitter"><i class="bx bxl-twitter"></i>Twitter</a></li>
+              <li><a href="https://www.facebook.com/" class="facebook"><i class="bx bxl-facebook"></i>Facebook</a></li>
+             <li> <a href="https://www.instagram.com/accounts/emailsignup/" class="instagram"><i class="bx bxl-instagram"></i>Instagram</a></li>
+              <li><a href="https://www.skype.com/en/" class="google-plus"><i class="bx bxl-skype"></i>Skype</a></li>
+              <li><a href="https://www.linkedin.com/signup" class="linkedin"><i class="bx bxl-linkedin"></i>LinkedIn</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

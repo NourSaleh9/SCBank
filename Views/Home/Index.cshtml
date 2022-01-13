@@ -1,0 +1,190 @@
+﻿@model SCBankGym.Models.TraineeModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    
+
+
+ 
+    <div  class="card border-dark mb-3" >
+        <div class="card-header">
+          <h1 class="display-4" >New Member Registration</h1>
+        </div>
+        <div class="card-body">
+      <form asp-action="TraineeRegister">
+     
+        <div class="rows">
+          <div class="item">
+            <label for="floatingInput" class="form-label mt-4" > First Name<span>*</span></label>
+            <input asp-for="FirstName" type="text" class="form-control"  required/>
+          </div>
+          <div class="item">
+            <label for="floatingInput" class="form-label mt-4"> Last Name<span>*</span></label>
+            <input asp-for="LastName" type="text" class="form-control" required/>
+          </div>
+          <div class="item">
+            <label for="floatingInput" class="form-label mt-4">Age<span>*</span></label>
+            <input asp-for="Age" type="number"  class="form-control" required/>
+          </div>
+          <div class="item">
+            <label for="floatingInput" class="form-label mt-4">City<span>*</span></label>
+            <input asp-for="City" type="text"   class="form-control" required/>
+          </div>
+          <div class="item">
+            <label for="floatingInput" class="form-label mt-4" type="email">Email Address<span>*</span></label>
+            
+          <p >@ViewBag.Error</p>
+            <input asp-for="Email" type="email"   class="form-control" required/>
+          </div>
+          <div class="item">
+            <label for="floatingInput" class="form-label mt-4">Phone<span>*</span></label>
+            <input asp-for="Phone" type="tel"  class="form-control" required/>
+          </div>
+        </div>
+         <div class="item">
+            <label for="floatingPassword" class="form-label mt-4" >Password<span>*</span></label>
+            <input  asp-for="Passwordd"  type="password"   class="form-control" required/>
+          </div>
+           <div class="item">
+            <label for="floatingPassword" class="form-label mt-4">Confirm Password<span>*</span></label>
+            <input  type="password"  class="form-control" required/>
+          </div>
+                  <fieldset class="form-group">
+      <legend class="mt-4">Gender</legend>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input  type="radio" class="form-check-input" name="gender" id="male" value="male" >
+          Male
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="gender" id="female" value="female">
+          Female
+        </label>
+      </div>
+      
+    </fieldset>
+
+            <fieldset class="form-group">
+      <legend class="mt-4">Classes</legend>
+      <div class="row">
+          <div class="col-3">
+ <input type="checkbox" name="class" >
+        <label class="form-check-label" for="flexCheckDefault">
+          GYM
+        </label>
+          </div>          <div class="col-3">
+ <input type="checkbox" name="class"  >
+        <label class="form-check-label" for="flexCheckChecked">
+          ZOUMBA
+        </label>
+          </div>          <div class="col-3">
+  <input type="checkbox" name="class" >
+        <label class="form-check-label" for="flexCheckChecked">
+          YOUGA
+        </label>
+          </div>
+               <div class="col-3">
+    <input type="checkbox" name="class"  >
+        <label class="form-check-label" for="flexCheckChecked">
+          FITNESS
+        </label>
+          </div>
+        
+     @* </div>
+      <div class="form-check">*@
+        
+    @*  </div>
+      <div class="form-check">*@
+       
+@*      </div>
+       <div class="form-check">*@
+      
+      </div>
+    </fieldset>
+    
+            <fieldset class="form-group">
+      <legend class="mt-4">Membership Type</legend>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input"  name="Subscription" id="standard" value="standard" checked="">
+          Standard
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="Subscription" id="premium" value="premium">
+          Premium
+        </label>
+      </div>
+      <div class="form-check disabled">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="Subscription" id="ultimate" value="ultimate" >
+          Ultimate
+        </label>
+      </div>
+    </fieldset>
+      <fieldset class="form-group">
+      <legend class="mt-4">Preferred way to contact</legend>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="preferredContact" id="phone" value="option1" checked="">
+          Phone
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="preferredContact" id="email" value="option2">
+          Email
+        </label>
+      </div>
+      <div class="form-check disabled">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="preferredContact" id="optionsRadios3" value="option3" >
+          Any
+        </label>
+      </div>
+    </fieldset>
+       
+        <h2>Terms and Conditions</h2>
+        <input type="checkbox" name="checkbox1" class="form-check-input" required>
+        <label>You consent to receive communications from us electronically. We will communicate with you by e-mail or phone. You agree that all agreements, notices, disclosures and other communications that we provide to you electronically satisfy any legal requirement that such communications be in writing.</label>
+        <div class="btn-block">
+          <button type="submit" href="/" class="btn btn-outline-success" onclick="notify()">Submit</button>
+        </div>
+      </form>
+      </div>
+    </div>
+
+    </div>
+    
+    
+ <script>
+        function notify(){
+  var els = document.querySelectorAll('input:checked');
+  for(var i = 0; i< els.length; i++){
+    console.log(els[i].type, els[i].value)
+  }
+}
+    </script>
+    @*<script>
+
+function onChange() {
+  const password = document.querySelector('input[name=password]');
+  const confirm = document.querySelector('input[name=confirm]');
+  if (confirm.value === password.value) {
+    confirm.setCustomValidity('');
+
+    
+  } else {
+      alert("Passwords do not match");
+    confirm.setCustomValidity('Passwords do not match');
+  }
+}
+onChange='onChange();'
+</script>*@
